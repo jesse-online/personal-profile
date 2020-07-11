@@ -146,11 +146,14 @@ Media queries
 @media (min-width: 768px) {
 
     #main-header-wrap {
+        flex-flow: row nowrap;
         padding: 1.5em 0;
         margin: 0 1.5em;
     }
 
     #title {
+        display: flex;
+        
         font-size: 2em;
         margin: 1.5em 0;
     }
