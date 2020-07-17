@@ -15,48 +15,68 @@
     <div id="wrapper" class="flex">
         <header id="main-header">
             <div id="main-header-wrap" class="flex">
-                <img id="profile-pic" src="img/shroom_face_final.jpg" alt="Portrait of Jesse">
-                <div id="vital-facts">
-                    <h2 id="vital-facts-title">Vital facts</h2>
-                    <ul id="vital-facts-list">
-                        <li><strong>Sign: </strong>Gemini</li>
-                        <li><strong>Eye color: </strong>Blue</li>
-                        <li><strong>Favorite food: </strong>Falafel</li>
-                    </ul>
-                </div> <!-- /#vital-facts -->
+                <div id="coin-wrap">
+                    <div id="coin-wrap-inner">
+                        <div id="profile-pic-wrap">
+                            <img id="profile-pic" src="img/shroom_face_final.jpg" alt="Portrait of Jesse">
+                        </div> <!-- /#profile-pic-wrap-->
+                        <div id="vital-facts-wrap">
+                            <h2 id="vital-facts-title">Vital facts</h2>
+                            <ul id="vital-facts-list">
+                                <li><strong>Sign: </strong>Gemini</li>
+                                <li><strong>Eye color: </strong>Blue</li>
+                                <li><strong>Favorite food: </strong>Falafel</li>
+                            </ul>
+                        </div> <!-- /#vital-facts-wrap -->
+                    </div> <!-- /#coin-wrap-inner -->
+                </div> <!-- /#coin-wrap for 3D spin effect on profile picture-->
                 <h1 id="title"><span id="first-name">Jesse </span><span id="last-name">Cleary-Budge</span></h1>
             </div> <!-- /#main-header-wrap -->
         </header>
 
         <main id="main-content" class="flex">
             <h2 id="main-content-title">All about me</h2>
-            <div id="card-past" class="card">
-                <img src="http://placeimg.com/300/300/arch" alt="Picture of the past">
-                <h3>Past</h3>
-                <p>In the past, I studied in Monterey, CA, and lived in Frankfurt, Germany. I worked as an in-house German-English translator at a boutique translation company in Frankfurt.</p>
-                <p>Eventually,  I moved to Washington DC, where I worked for the State Department as a project manager and German interpreter. I also worked with a team to facilitate the development of a cloud-computing solution on the ServiceNow platform.</p>
-            </div>
             <div id="card-present" class="card">
-                <img src="http://placeimg.com/300/300/arch" alt="Picture of the present">
                 <h3>Present</h3>
+                <figure>
+                    <img src="img/mia_the_kitty.jpg" alt="Cat perched on a scratching post">
+                    <figcaption>Mia being watchful</figcaption>
+                </figure>   
                 <p>I'm currently living in Lexington, KY, with my lovely cat Mia. I work as a freelance translator and am studying to become a freelance web developer through Team Treehouse.</p>
                 <p>In my freetime, I enjoy teaching yoga, marveling at nature and cooking vegan food.</p>
             </div>
+            <div id="card-past" class="card">
+                <h3>Past</h3>
+                <figure>
+                    <img src="img/hoernchen.jpg" alt="Croissant on a public works box">
+                    <figcaption>Street art in Frankfurt, Germany</figcaption>
+                </figure>
+                <p>In the past, I studied in Monterey, CA, and lived in Frankfurt, Germany. I worked as an in-house German-English translator at a boutique translation company in Frankfurt.</p>
+                <p>Eventually,  I moved to Washington DC, where I worked for the State Department as a project manager and German interpreter. I also worked with a team to facilitate the development of a cloud-computing solution on the ServiceNow platform.</p>
+            </div>
+            
             <div id="card-future" class="card">
-                <img src="http://placeimg.com/300/300/arch" alt="Picture of the future">
                 <h3>Future</h3>
-                <p>I'd like to strike a balance of taking on freelance web development and translation projects in the future. The freelance lifestyle affords me a lot of flexibility, which I use to give myself a lot of space and time for writing, self-reflection and community-building.</p>
+                <figure>
+                    <img src="img/sunset.jpg" alt="Pink clouds in a parking lot">
+                    <figcaption>Sunset in Asheville, North&nbsp;Carolina</figcaption>
+                </figure>
+                <p>I'd like to strike a balance of taking on freelance web devel&shy;opment and translation projects in the future. The freelance lifestyle affords me a lot of flexibility, which I use to give myself a lot of space and time for writing, self-reflection and community-building.</p>
                 <p>Another interest of mine is becoming a Spanish interpreter. My plan is to study abroad in Guatemala in 2021 and explore the possibility of serving as an interpreter in mental health settings.</p>
             </div>
         </main>
         <footer id="main-footer" class="flex">
-            <span id="copy-wrap">&copy; Jesse Cleary-Budge</span>
+            <span id="copy-wrap">&copy; Jesse Cleary&#8209;Budge</span>
             <div id="social-wrap" class="flex">
-                <a href="https://twitter.com/jesse_is_online">
+                <a id="github-link" href="https://github.com/jesse-online/">
+                    <img src="img/github-bug.svg" alt="GitHub logo">
+                </a>
+
+                <a id="twitter-link" href="https://twitter.com/jesse_is_online">
                     <img src="img/twitter-bug.svg" alt="Twitter logo">
                 </a>
 
-                <a href="https://linkedin.com/clearyjd">
+                <a id="linkedin-link" href="https://linkedin.com/in/clearyjd">
                     <img src="img/linkedin-bug.svg" alt="LinkedIn logo">
                 </a>
             </div><!-- /#social-wrap -->

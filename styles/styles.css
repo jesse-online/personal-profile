@@ -16,6 +16,25 @@ h3 {
     font-family: "Open Sans", sans-serif;
 }
 
+h3 {
+    padding: 0.5em 0;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+figcaption {
+    font-size: 0.8em;
+    font-style: italic;
+    padding-left: .2em;
+}
+
+p {
+    line-height: 1.6;
+}
+
 /*************
 Reusable styles
 *************/
@@ -31,7 +50,7 @@ Main styles
 #wrapper {
     margin: 0 auto;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
 }
 
 #main-header {
@@ -43,26 +62,71 @@ Main styles
 #main-header-wrap {
     align-items: center;
     padding: 1em 0;
-    margin: 0 1em;
+    margin: 0 1em;    
 }
 
-#profile-pic {
-    max-width: 300px;
-    max-height: 300px;
+#coin-wrap {
+    background: transparent;
+    width: 300px;
+    height: 300px;
     border: 15px solid #fff;
     border-radius: 50%;
     box-shadow: 2px 2px 5px 1px #000;
-    transition: transform .3s ease-out;
-
+    perspective: 700px;
 }
 
-#profile-pic:hover {
-    transform: scale(1.1);
+#coin-wrap-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
 }
 
-#vital-facts {
-    display: none;
+#coin-wrap:hover #coin-wrap-inner {
+    transform: rotateY(-180deg);
 }
+
+#profile-pic-wrap,
+#vital-facts-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(0, 0, 0, .7);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#profile-pic-wrap {
+    background-color: #eee;
+    color: #000;
+    border-radius: 50%;
+}
+
+#profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#vital-facts-wrap {
+    background-color: #F39B6D;
+    color: #000;
+    border-radius: 50%;
+    transform: rotateY(180deg);
+    padding-top: 2.5em;
+}
+
+#vital-facts-list {
+    list-style-type: none;
+    text-align: left;
+}
+
+#vital-facts-list li {
+    margin-bottom: 0.5em;
+}
+
 
 #title {
     font-size: 1.8em;
@@ -86,26 +150,31 @@ Main styles
     align-self: center;
     color: #fff;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 2em;
     text-shadow: 1.5px 1.5px 4px #000;
-    padding: 1em 0 .3em;
-    margin: 0;
+    padding: 0 0 0;
+    margin: 1em 0;
     
 }
 
 .card {
     flex: 1 90%;
     max-width: 90%;
-    background-color: rgb(194, 239, 179, .7); /* background-color: rgb(194, 239, 179, .8); */
-    border-radius: 20px;
-    padding: 1em;
-    margin: 1em;
+    background-color: rgb(255, 255, 255, .9); /* background-color: rgb(194, 239, 179, .8); */
+    border-radius: 10px;
+    padding: 1.5em;
+    margin: 0 1em 1em;
     box-shadow: 1px 1px 4px 0px #000;
 }
 
+.card figure {
+    margin: 0 auto;
+}
+
 .card img {
-    max-width: 100%;
-    border-radius: 20px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.2em;
 }
 
 .card h3 {
@@ -114,11 +183,19 @@ Main styles
     text-align: center;
 }
 
+.card p:last-child {
+    margin-bottom: 0;
+}
+
 #main-footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
+}
+
+#copy-wrap {
+    font-size: .8em;
 }
 
 #social-wrap {
@@ -133,11 +210,22 @@ Main styles
 
 }
 
-#social-wrap a:last-child img {
-    height: 2.3em;
-    width: 2.3em;
+#social-wrap a {
+    transition: transform .3s ease-out;
+}
+
+#social-wrap a:hover {
+    transform: scale(1.2);
+}
+
+#social-wrap a:not(:last-child) {
+    margin-right: 1.25em;
+}
+
+#linkedin-link img {
+    height: 2.4em;
+    width: 2.4em;
     margin: -3px;
-    margin-left: 1em;
 }
 
 /*********
@@ -147,28 +235,39 @@ Media queries
 
     #main-header-wrap {
         flex-flow: row nowrap;
+        justify-content: center;
         padding: 1.5em 0;
         margin: 0 1.5em;
     }
 
     #title {
         display: flex;
-        
+        flex-flow: column nowrap;
         font-size: 2em;
-        margin: 1.5em 0;
+        margin: 1.5em 0 1.5em 1.5em;
+    }
+
+    #first-name {
+        align-self: flex-end;
+        font-size: 3em;
+        letter-spacing: .04em;
+    }
+
+    #last-name {
+        font-size: 1.5em;
     }
 
     #main-content {
         flex-flow: row wrap;
         justify-content: space-around;
-        padding: 1.5em;
+        padding: 1em;
     }
     
     #main-content-title {
         flex: 1 100%;
         text-align: center;
-        font-size: 2em;
-        padding-bottom: 2em;
+        font-size: 3em;
+        margin: calc(1em - 1rem) 0 1em;
     }
 
     .card {
@@ -178,36 +277,73 @@ Media queries
         padding: 1.5em;
     }
 
-    .card img {
+    .card h3 {
+        margin-top: 0;
+    }
+
+    .card figure {
         width: 150px;
         float: right;
-        margin-left: 1.5em;
-        margin-bottom: 1.5em;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        margin-top: 0;
     }
 
-
-    #card-past h3,
-    #card-present h3 {
-        text-align: left;
+    .card p {
+        margin-top: 0;
+        padding-top: 0;
     }
 
-    #card-past {
-        margin-right: 1.5em;
+    #card-present {
+        margin-right: 1em;
     }
 
     #card-future {
         flex: 1 100%;
         max-width: 100%;
-        margin-top: 1.5em;
+        margin-top: 1em;
     }
 
-    #card-future img {
+    #card-future figure {
         float: left;
-        margin-right: 1.5em;
+        margin-right: 1em;
         margin-left: 0;
     }
 
     #main-footer {
-        padding: 1.5em;
+        padding: 1em;
     }
+
+    #copy-wrap {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1100px) {
+
+    .card,
+    #card-future {
+        flex: 1 32%;
+        max-width: 32%;
+        margin-top: 0;
+    }
+
+    .card:not(:last-child) {
+        margin-right: 1em;
+    }
+
+    .card img {
+        float: left;
+    }
+
+    .card h3 {
+        align-self: flex-start;
+    }
+
+    #card-future figure {
+        float: right;
+        margin-right: 0;
+        margin-left: 1em;
+    }
+
 }
